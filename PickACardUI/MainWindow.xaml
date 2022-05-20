@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PickACardUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Wybieranie kart" Height="300" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="63*"/>
+            <ColumnDefinition Width="294*"/>
+            <ColumnDefinition Width="400*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Margin="15,0,0,0" Grid.Column="2">
+            <Label Content="Podaj liczbę kart:" FontSize="20"/>
+            <Slider x:Name="numberOfCards" Maximum="15" Minimum="1" AutoToolTipPlacement="TopLeft" TickPlacement="BottomRight" IsSnapToTickEnabled="True" Foreground="Black"/>
+        </StackPanel>
+        <Button Content="Wybierz karty" Grid.Row="1" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Margin="32,0,0,0" Click="Button_Click"/>
+        <ListBox x:Name="listOfCards" Grid.Column="3" FontSize="20" Margin="20,20,20,20" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>
